@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ChevronDown, Leaf } from "lucide-react";
 
-import { buttonVariants } from "@/components/ui/button";
+import { AuthActions } from "@/components/auth/auth-actions";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
@@ -53,26 +53,7 @@ export function SiteHeader({ activePage = "home" }: SiteHeaderProps) {
           </span>
         </div>
 
-        <div className="flex items-center gap-1.5" aria-label="Account actions preview">
-          <span
-            aria-disabled="true"
-            className={cn(
-              buttonVariants({ variant: "ghost", size: "sm" }),
-              "hidden cursor-default sm:inline-flex",
-            )}
-          >
-            Sign in
-          </span>
-          <span
-            aria-disabled="true"
-            className={cn(
-              buttonVariants({ size: "sm" }),
-              "cursor-default px-3.5 shadow-none",
-            )}
-          >
-            Get started
-          </span>
-        </div>
+        <AuthActions />
       </div>
       <Separator />
     </header>
